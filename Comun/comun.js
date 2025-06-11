@@ -30,7 +30,7 @@
 
      document.addEventListener('DOMContentLoaded', function() {
             // Ruta al componente HTML del chatbot
-            const chatComponentURL = '../ChatBot/chat.html';
+            const chatComponentURL = '../ChatBot/chatbot-component.html';
 
             fetch(chatComponentURL)
                 .then(response => {
