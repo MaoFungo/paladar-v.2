@@ -1,0 +1,158 @@
+/* --- Estilos Generales --- */
+:root {
+  --primary-color: #e44d26; /* Naranja/Rojo temático */
+  --primary-hover: #c43d1a;
+  --dark-bg: #2a1a1a;
+  --light-bg: #fff9f5;
+  --text-dark: #333;
+  --text-light: #666;
+  --border-color: #ddd;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dark-bg);
+  background-image: radial-gradient(circle, #4a2c2a, var(--dark-bg) 70%);
+  color: var(--text-dark);
+}
+
+/* --- Contenedor Principal del Login --- */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* --- Cabecera del Formulario (Logo y Títulos) --- */
+.form-header .logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.form-header h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.form-header p {
+  margin: 0 0 30px;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+/* --- Grupos de Inputs (Label + Input) --- */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(228, 77, 38, 0.2);
+}
+
+/* --- Opciones (Recuérdame y Olvidaste Contraseña) --- */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+.remember-me input {
+  margin-right: 8px;
+  accent-color: var(--primary-color);
+}
+
+a.forgot-password, .signup-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s;
+}
+
+a.forgot-password:hover, .signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* --- Botón de Login --- */
+.btn-login {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-login:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-login:active {
+  transform: scale(0.98);
+}
+
+/* --- Enlace de Registro --- */
+.signup-link {
+  margin-top: 25px;
+  color: var(--text-light);
+}
+
+/* --- Responsividad para Móviles --- */
+@media (max-width: 480px) {
+  .login-form {
+    padding: 25px;
+  }
+  .form-header h2 {
+    font-size: 1.8rem;
+  }
+}

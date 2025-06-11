@@ -1,0 +1,26 @@
+<!-- Botón flotante que abrirá el panel lateral -->
+<div id="chatbot-toggle-button" title="Abrir Chat de Asistencia">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M15 9H9a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1z"/><path d="M12 2a10 10 0 0 0-9.4 12.83l-1.42 1.42a1 1 0 0 0 .34 1.61l1.62.4a1 1 0 0 0 1.1-.34l.29-.42A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-5.73-2.52l.25-.36a1 1 0 0 0-.34-1.1L4.56 14.4a1 1 0 0 0-1.28.28l-.42.6A8 8 0 1 1 12 20z"/><circle cx="8.5" cy="12.5" r="1.5"/><circle cx="15.5" cy="12.5" r="1.5"/></svg>
+</div>
+
+<!-- El Panel Lateral del Chat (inicialmente oculto) -->
+<aside id="chatbot-sidebar" class="chatbot-sidebar">
+    <div class="chat-header">
+        <span>Asistente Paladar del Inca</span>
+        <span id="close-chat-btn" class="close-chat-btn" title="Cerrar">×</span>
+    </div>
+    <div class="chat-body">
+        <div id="typing-indicator" class="typing-indicator hidden">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+    <div class="chat-footer">
+        <input id="chat-input" type="text" placeholder="Escribe tu mensaje...">
+        <button id="send-btn" class="send-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M3.4 20.4l17.4-8.4c.6-.3.6-1.1 0-1.4L3.4 2.2c-.6-.3-1.3.1-1.3.8v6.4c0 .5.4.9.9.9h6.3c.5 0 .9.4.9.9s-.4.9-.9.9H3v6.4c0 .7.7 1.1 1.4.8z"/>
+            </svg>
+        </button>
+    </div>
+</aside>

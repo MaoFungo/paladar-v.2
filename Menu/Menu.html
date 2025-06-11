@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú</title>
+  <link rel="stylesheet" href="../Menu/Menu.css">
+  <link rel="stylesheet" href="../Comun/comun.css">
+  <link rel="shortcut icon" href="../Recursos/img/logo.webp" type="image/x-icon">
+  <script src="Menu.js" defer></script>
+  <script src="../Comun/comun.js" defer></script>
+
+  <!-- === CSS AÑADIDO PARA POSICIONAR EL BOTÓN CERRAR === -->
+  <style>
+    .modal-contenido {
+      position: relative; /* Necesario para posicionar el botón de cerrar de forma absoluta */
+    }
+    .modal-cerrar-btn {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #555;
+      line-height: 1;
+      padding: 0;
+    }
+    .modal-cerrar-btn:hover {
+      color: #000;
+    }
+  </style>
+  <!-- ======================================================= -->
+
+</head>
+<body>
+<header>
+  <div class="Logo">
+    <button onclick="Boton(event)" class="BotonLogo">
+      <img src="../Recursos/img/logo.webp" alt="Logo" class="logo" />
+    </button>
+  </div>
+  <h1>MENÚ</h1>
+  <div class="header-login">
+    <a href="../Login/login.html" class="login-link">Iniciar Sesión</a>
+  </div>
+</header>
+
+<nav>
+    <a href="../index.html">Inicio</a>
+    <a href="../Servicio/servicio.html">Servicios</a>
+    <a href="../Contactos/contactos.html">Contactos</a>
+    <a href="menu.html">Ir al Menú</a>
+</nav>
+
+<h2>Conoce nuestro Menú</h2>
+
+<div class="filtros">
+  <input type="text" id="buscadorPizzas" placeholder="Buscar pizza...">
+</div>
+
+<div class="BotonesDesplegablesMenu">
+     <button id="toggleMenuBtn" class="BotonPizzasConocidas">Conoce nuestras pizzas mas vendidas</button>
+</div>
+<div id="mensajeBuscadorContainer"></div>
+
+<main>
+    <!-- MODIFICADO: Ahora usamos un data-id único -->
+    <div class="bloque" data-id="p01">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Super-Inka.webp" alt="Pizza Super Inka"></aside>
+        <section class="Texto"><h2>Mama Ocllo - ex Pizza Super Inka</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloque" data-id="p02">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Capricho.webp" alt="Pizza Capricho del Inka"></aside>
+        <section class="Texto"><h2>Pizza Capricho del Inka</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque" data-id="p03">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Cuatro-Estaciones.webp" alt="Pizza Cuatro Estaciones"></aside>
+        <section class="Texto"><h2>Pizza Cuatro Estaciones</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque" data-id="p04">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Casa.webp" alt="Pizza de la Casa"></aside>
+        <section class="Texto"><h2>Sipas- ex Pizza de la Casa</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque" data-id="p05">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Especial.webp" alt="Pizza Especial"></aside>
+        <section class="Texto"><h2>Manco Ccapac- ex Pizza Especial</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque" data-id="p06">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Paladar.webp" alt="Pizza Paladar del Inka"></aside>
+        <section class="Texto"><h2>Pizza Paladar del Inka</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque" data-id="p07">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Wiracocha.webp" alt="Pizza Wiracocha"></aside>
+        <section class="Texto"><h2>Pizza Wiracocha</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque" data-id="p08">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Presidencial.webp" alt="Pizza Presidencial"></aside>
+        <section class="Texto"><h2>Pachamama-ex Pizza Presidencial</h2><button>Ver detalles</button></section>
+    </div>
+</main>
+
+<div class="BotonesDesplegablesMenu">
+    <button id="toggleMenuBtnSemi" class="BotonSemiDulces">Pizzas Semi Dulces</button>
+</div>
+   
+<main>
+    <div class="bloque2" data-id="p09">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Tanwantinsuyo.webp" alt="Pizza Tawantinsuyo"></aside>
+        <section class="Texto"><h2>Pizza Tawantinsuyo</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloque2" data-id="p10">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Warmicha.webp" alt="Pizza Warmicha"></aside>
+        <section class="Texto"><h2>Pizza Warmicha</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque2" data-id="p11">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Huascar.webp" alt="Pizza Huascar"></aside>
+        <section class="Texto"><h2>Pizza Huascar</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloque2" data-id="p12">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Willka.webp" alt="Pizza Willka"></aside>
+        <section class="Texto"><h2>Pizza Willka - Ex Hawayana</h2><button>Ver detalles</button></section>
+    </div>
+    <div class="bloque2" data-id="p13">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Munay.webp" alt="Pizza  Munay"></aside>
+        <section class="Texto"><h2>Pizza Munay - Ex Super Hawayana</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloque2" data-id="p14">
+        <aside class="Imagen"><img src="../Recursos/img/Platos.webp" alt="Pizza Ayni"></aside>
+        <section class="Texto"><h2>Pizza Ayni</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizzas Dulces</h2>
+<main>
+    <div class="bloqueM" data-id="p15">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Miski.webp" alt="Pizza Misk'i - Ex Tropical"></aside>
+        <section class="Texto"><h2>Pizza Misk'i - Ex Tropical</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p16">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Awka.webp" alt="Pizza Awka - Ex Tropical especial"></aside>
+        <section class="Texto"><h2>Pizza Awka - Ex Tropical especial</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p17">
+        <aside class="Imagen"><img src="../Recursos/img/Platos.webp" alt="Pizza Jhillu"></aside>
+        <section class="Texto"><h2>Pizza Jhillu</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizza Con Cuy</h2>
+<main>
+    <div class="bloqueM" data-id="p18">
+        <aside class="Imagen"><img src="../Recursos/img/Platos.webp" alt="Pizza Euge"></aside>
+        <section class="Texto"><h2>Pizza Euge</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p19">
+        <aside class="Imagen"><img src="../Recursos/img/Platos.webp" alt="Pizza Illapa"></aside>
+        <section class="Texto"><h2>Pizza Illapa</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p20">
+        <aside class="Imagen"><img src="../Recursos/img/Platos.webp" alt="Pizza Tawa Aycha"></aside>
+        <section class="Texto"><h2>Pizza Tawa Aycha</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizza Con Carne</h2>
+<main>
+    <div class="bloqueM" data-id="p21">
+        <aside class="Imagen"><img src="../Recursos/img/Platos.webp" alt="Pizza Aklla"></aside>
+        <section class="Texto"><h2>Pizza Aklla</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p22">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Auqui.webp" alt="Pizza Auqui"></aside>
+        <section class="Texto"><h2>Pizza Auqui</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizza Con Pollo</h2>
+<main>
+    <div class="bloqueM" data-id="p23">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Qoya.webp" alt="Pizza Qoya"></aside>
+        <section class="Texto"><h2>Pizza Qoya</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p24">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Atahualpa.webp" alt="Pizza Atahuallpa"></aside>
+        <section class="Texto"><h2>Pizza Atahuallpa</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p25">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Illary.webp" alt="Pizza Illary - Ex Francesa"></aside>
+        <section class="Texto"><h2>Pizza Illary - Ex Francesa</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizzas Vegetarianas</h2>
+<main>
+    <div class="bloqueM" data-id="p26">
+        <aside class="Imagen"><img src="../Recursos/img/Platos.webp" alt="Pizza Killa"></aside>
+        <section class="Texto"><h2>Pizza Killa</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p27">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Inti.webp" alt="Pizza Inti - Ex Vegetariana"></aside>
+        <section class="Texto"><h2>Pizza Inti - Ex Vegetariana</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizzas Picantes</h2>
+<main>
+    <div class="bloqueM" data-id="p28">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_China_Saqra.webp" alt="Pizza China Saqra - Ex Palermo"></aside>
+        <section class="Texto"><h2>Pizza China Saqra - Ex Palermo</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p29">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Uchu_Supay.webp" alt="Pizza Uchu Supay"></aside>
+        <section class="Texto"><h2>Pizza Uchu Supay</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizzas Individuales</h2>
+<main>
+    <div class="bloqueM" data-id="p30">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Americana.webp" alt="Pizza Americana"></aside>
+        <section class="Texto"><h2>Pizza Americana</h2><button>Ver detalles</button></section>
+    </div> 
+    <div class="bloqueM" data-id="p31">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza_Simple.webp"  alt="Pizza Simple"></aside>
+        <section class="Texto"><h2>Pizza Simple</h2><button>Ver detalles</button></section>
+    </div> 
+</main>
+
+<h2 class="Subtitulo" >Pizza Al Gusto</h2>
+<main>
+    <div class="bloqueM" data-id="p32">
+        <aside class="Imagen"><img src="../Recursos/img/Pizza-Al-Gusto.webp" alt="Pizza Al Gusto"></aside>
+        <section class="Texto"><h2>Pizza Al Gusto</h2><button>Ver detalles</button></section>
+    </div>
+</main>
+
+<footer>
+    © 2025 Paladar del Inka - Todos los derechos reservados.
+    <img class="Redes" id="Facebook" src="../Recursos/img/facebook.webp" alt="Facebook">
+    <img class="Redes" id="Instagram" src="../Recursos/img/instagram.webp" alt="Instagram">
+    <img class="Redes" id="Tiktok" src="../Recursos/img/tik-tok.webp" alt="TikTok">
+</footer>
+
+<!-- MODAL DE CANTIDAD (ESTRUCTURA MODIFICADA) -->
+<div id="modalCantidad" class="modal">
+    <div class="modal-contenido">
+        <!-- MODIFICACIÓN: Botón de cerrar movido a la esquina superior izquierda -->
+        <button id="cerrarModalCantidad" class="modal-cerrar-btn">×</button>
+        
+        <section>
+            <!-- La imagen y los detalles se ponen dinámicamente con JS -->
+            <img id="modalPizzaImagen" src="" alt="Pizza seleccionada">
+            <div id="modalPizzaDetalles" class="modal-detalles">
+                <!-- Los ingredientes aparecerán aquí -->
+            </div>
+        </section>
+
+        <aside>
+            <!-- El título se pone dinámicamente con JS -->
+            <h2 id="modalPizzaNombre"></h2>
+
+            <h3>Tamaño de la pizza</h3>
+            <select name="tamaño" id="tamaño">
+                <option value="pequeño">Runa (pequeño)</option>
+                <option value="mediano">Misqui (mediano)</option>
+                <option value="grande">Pachacutec (grande)</option>
+            </select>
+
+            <h3>Cantidad</h3>
+            <div class="cantidad-control">
+                <button id="bajarCantidad">-</button>
+                <input type="number" id="cantidadInput" value="1" min="1" max="10" readonly>
+                <button id="subirCantidad">+</button>
+            </div>
+            <p id="mensajeCantidadMaxima" class="mensaje-info"></p>
+            
+            <p class="modal-precio">Precio: <span id="modalPrecio">S/ 0.00</span></p>
+
+            <!-- MODIFICACIÓN: Añadido botón "Continuar Pago" y eliminado el de "Cancelar" de aquí -->
+            <div class="acciones-botones">
+                <button id="confirmarCantidad" class="btn-accion btn-primario">Añadir Carrito</button>
+                <button id="continuarPago" class="btn-accion btn-primario">Continuar Pago</button>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<!-- MODAL DEL CARRITO (SIN CAMBIOS) -->
+<div id="modalCarrito" class="modal">
+  <div class="contenido-modal">
+    <h2>Tu carrito</h2>
+        <div class="tabla-wrapper">
+        <table id="tablaCarrito">
+          <thead>
+            <tr>
+              <th>Pizza</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th>Subtotal</th>
+              <th>Tamaño</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+    </div>
+    <p id="totalCarrito">Total: S/ 0.00</p>
+    <button id="cerrarModalCarrito">Cerrar</button>
+  </div>
+</div>
+
+<button class="BotonCarrito" id="verCarrito"> 
+    <img class="Carrito" src="../Recursos/img/Carrito-removebg-preview.webp" alt="Carrito" ><h3 class="PalabrasC">Carrito</h3>
+</button>
+   
+</body>
+</html>
